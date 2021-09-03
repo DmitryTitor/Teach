@@ -1,0 +1,136 @@
+// main: ../../style.less
+
+@import "../vars.less";
+@import "menu-item.less";
+
+.header {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  margin: 0 13%;
+  font-family: 'Roboto Regular';
+}
+
+.header__menu {
+  color: @primary-text-color;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__user-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  & > .header__phone  {
+    margin-right: 1em;
+  }
+}
+
+.header__company-name {
+  font-weight: 700;
+}
+
+.header__select-city {
+  border: none;
+  max-width: min-content;
+  width: 100px;
+  text-align-last: right;
+  text-overflow: ellipsis;  
+  
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+
+@media (max-width: 1023px) {
+  .header__phone {
+    display: none;
+  }
+
+  .header__shoping-cart {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    line-height: normal;
+
+    & .header__shoping-cart-svg {
+      fill: @primary-text-color;
+      width: 2rem;
+    }
+
+    & .header__shoping-cart-caption {
+      color: gray;
+      line-height: 80%;
+    }
+  
+    & .header__products-number {
+      position: absolute;
+      left: .7rem;
+      top: .25rem;
+    }
+  }
+
+  .header__menu-svg {
+    width: 2rem;
+    border: .1rem solid black;
+    border-radius: .3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    margin: 2%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header {
+    margin: 0 2%;
+  }  
+
+  .header__select-city {
+    margin: 0 1rem;    
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__shoping-cart, .header__menu-svg {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .header__menu-svg {
+    height: 2rem;
+  }
+
+  .header {
+    height: 4rem;
+  }
+
+  .header__shoping-cart {
+    position: relative;
+    & .header__products-number {
+      position: absolute;
+      left: .7rem;
+      top: 3.9rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .header__select-city {
+    margin: 0 1rem;    
+  }
+}

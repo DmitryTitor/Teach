@@ -1,0 +1,14 @@
+{
+  "name": "frontend-pizza",
+  "version": "1.0.0",
+  "description": "Данный проект представляет собой свёрстанный адаптивный макет \"Frontend pizza\".\r Проект отображается по-разному на desktop(1024px и больше), планшетах (между 768px и 1024px) и\r телефонах(меньше 768px)",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Popov D.V.",
+  "license": "ISC",
+  "dependencies": {
+    "less": "^4.1.1"
+  }
+}

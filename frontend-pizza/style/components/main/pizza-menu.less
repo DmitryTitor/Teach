@@ -1,0 +1,402 @@
+// main: ../../style.less
+
+/* autoprefixer grid: autoplace */
+
+@import "../vars.less";
+
+.pizza-menu {
+  margin-bottom: 1rem;
+
+  & .pizza-menu__caption {
+    color:white;
+    font-size: 180%;
+    font-style: italic;
+  }
+
+  & .pizza-menu__header {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & .pizza-menu__filters {
+    flex-grow: 4;
+  }
+
+  & .pizza-menu__search {
+    flex-grow: 1;
+    color: white;
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    padding: .3rem 0;
+  }
+  
+  & .pizza-menu__input-search {
+    background-color: transparent;
+    color: white;
+    outline: none;    
+    border: none;
+    padding: 0 .5rem;
+    flex-grow: 10;
+  }
+
+  & .pizza-menu__glass {
+    flex-grow: 1;
+    border-left: 1px solid rgb(179, 179, 179);
+    padding: .3rem;
+  }
+
+  & .pizza-menu__glass:hover {
+    cursor: pointer;
+  }
+
+  & .pizza-menu__input-search::placeholder {
+    color: white;
+  }
+
+  & .pizza-menu__filters {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & .pizza-menu__filter {
+    display: block;
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 15px;
+    padding: .5rem;
+    color: rgb(179, 179, 179);
+    
+  }
+
+  & .pizza-menu__filter:hover {
+    cursor: pointer;
+    border: 1px solid white;
+    color: white
+  }
+
+  & .pizza-menu__filter_active {
+    border: 1px solid @logo-yellow;
+    color: @logo-yellow;
+  }
+}
+
+.pizza-list {
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  color: rgb(32, 32, 32);
+  line-height: normal;
+  margin-bottom: 3rem;
+
+  & .pizza-list__item {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .pizza-list__img {
+    width: 100%;
+    height: 40%;
+  }
+
+  & .pizza-list__caption {
+    display: block;
+    text-align: center;
+    font-size: 150%;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  & .pizza-list__products {
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  & .pizza-list__info {
+    height: 30%;
+  }
+
+  & .pizza-list__parameters {
+    height: 30%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  & .pizza-list__size {
+    width: 90%;
+    background-color: rgb(68, 68, 68);
+    color: white;
+    border-radius: .5rem;
+    padding: .1rem;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  & .pizza-list__size-selector {
+    flex-grow: 1;
+    text-align: center;
+    border-radius: .5rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: gray;
+    }
+  }
+
+  & .pizza-list__size-selector_active {
+    background-color: @logo-yellow;
+    color: black;
+  }
+
+  & .pizza-list__footer {
+    display: flex;
+    flex-direction: row;
+    margin: 0 5%;
+    justify-content: center;
+
+  }
+
+  & .pizza-list__footer > * {
+    display: block;
+    width: 100%;
+  }
+
+  & .pizza-list__buy {
+    font-size: .9rem;
+    background-color: darkred;
+    border: 0 solid transparent;
+    border-radius: 5px;
+    margin: 7% 0;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+      background-color: green;
+      color: @logo-yellow;
+    }
+  }
+
+  & .pizza-list__price {
+    text-align: center;
+    padding: 5% 10% 5% 5%;
+    margin: 4% 0;
+    font-size: 150%;
+    font-weight: bold;
+  }
+}
+
+.backet {
+  background-image: url(../img/basket.png);
+  height: 50%;
+  background-size: 100% 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20%;
+
+  & .backet__products {
+    height: 57%;
+  }
+
+  & .backet__title {
+    font-size: 150%;
+    color: @primary-text-color;
+    font-style: italic;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+
+  & .backet__product-item {
+    font-size: .7em;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0;
+    line-height: normal;
+    align-items: center;
+  }
+
+  & .backet__img {
+    height: 100%;
+    margin-right: .2rem;
+  }
+
+  & .backet__pizza-name, & .backet__pizza-price {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  & .backet__pizza-price {
+    color: @primary-text-color;
+  }
+
+  & .pizza-list__buy {
+    margin: 0;
+    padding: .5rem;
+  }
+}
+
+@media(max-width: 1023px) {
+  .backet {
+    display: none;
+  }
+}
+
+@media(max-width: 767px) {
+  .pizza-menu {
+    margin-bottom: 1rem;
+    padding: 0 2%;
+  
+    & .pizza-menu__caption {
+      color:white;
+      font-size: 180%;
+      font-style: italic;
+    }
+  
+    & .pizza-menu__header {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    & .pizza-menu__filters {
+      flex-grow: 1;
+      flex-wrap: wrap;
+    }
+  
+    & .pizza-menu__search {
+      flex-grow: 1;
+      align-self: flex-end;
+      color: white;
+      border: 1px solid rgb(179, 179, 179);
+      border-radius: 15px;
+      display: flex;
+      flex-direction: row;
+      padding: .3rem 0;
+      width: 25rem;
+    }
+  }
+
+  .pizza-list {
+    width: 70%;
+    margin: 0 15%;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    color: rgb(32, 32, 32);
+    line-height: normal;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .pizza-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & .pizza-menu__filters {
+    flex-wrap: wrap;
+  }
+
+  & .pizza-menu__filter {
+    margin: .2rem;
+  }
+
+  & .pizza-menu__search {
+    height: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  & .pizza-menu__filter {
+    margin: 0 .2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .pizza-list {
+    font-size: .8rem;
+
+    & .pizza-list__buy {
+      font-size: .7rem;
+    }  
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .backet {
+    background-image: url(../img/basket.png) no-repeat;
+    height: 50%;
+    width: 15rem;
+    background-size: cover;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    margin-top: 1rem;
+  
+    & .backet__products {
+      height: 8rem;
+      width: 10rem;
+    }
+  
+    & .backet__product-item {
+      font-size: .6em;
+      margin: 1rem;
+    }
+
+  }
+
+  .pizza-list {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: rgb(32, 32, 32);
+    line-height: normal;
+    margin-bottom: 3rem;
+  
+    & .pizza-list__item {
+      width: 23%;
+      margin: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .backet {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .pizza-menu {
+    & .pizza-menu__filters {
+      flex-wrap: wrap;
+    }
+
+    & .pizza-menu__filter {
+      margin: .2rem;
+    }
+  
+    & .pizza-menu__search {
+      height: 3rem;
+    }
+
+    & .pizza-menu__glass {
+      position: relative;
+      right: 2rem;
+    }
+  }
+
+}

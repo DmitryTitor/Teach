@@ -1,0 +1,41 @@
+// main: ../../style.less
+
+@import "../vars.less";
+@import "./cascad.less";
+@import "./pizza-menu.less";
+@import "./promotion.less";
+
+.main {
+  flex-grow: 30;
+  background-color: @back-color;  
+
+  & .main__rows {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  & .main__row {
+    width: 32%;
+    height: .5rem;
+    background-color: rgb(175, 172, 172);
+    margin: .5rem;
+  }
+
+  & .main__row_active {
+    background-color: @logo-yellow;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    padding: 0 2%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    padding: 0 13%;
+  }
+}

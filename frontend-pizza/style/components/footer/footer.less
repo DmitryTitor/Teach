@@ -1,0 +1,54 @@
+// main: ../../style.less
+
+@import "../vars.less";
+
+.footer {
+  flex-grow: 2;
+  background-image: url(../img/footer.png);  
+  background-size: cover;
+
+  & .footer__shadow {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  & .logo {
+    flex-grow: none;
+    margin: 3em 0;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  & .logo__caption {
+    color: white;
+  }
+
+  & .logo__main-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  & .footer__copyright {
+    color: rgb(148, 148, 148);
+    flex-grow: none;
+    margin-bottom: 1em;
+  }
+
+  & .logo__line_white {
+    width: 40%;
+    border-bottom: 1px solid rgb(230, 230, 230);
+    margin-bottom: 3rem;
+  }
+  
+  & .logo__line_gray {
+    width: 40%;
+    border-bottom: 1px solid gray;
+    margin-top: 3rem;
+  }
+}

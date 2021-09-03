@@ -1,0 +1,54 @@
+// main: ../../style.less
+
+@import "../vars.less";
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: @primary-text-color;
+  flex-grow: 1;
+  user-select: none; 
+}
+
+.logo__svg {
+  width: 2em;
+  height: 2em;
+  fill: @logo-yellow;
+  margin-right: .5em;
+}
+
+.logo__caption {
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logo__company-name {
+  position: relative;
+  top: .25em;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.logo__company-tagline {
+  position: relative;
+  top: -.25em;  
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: .7rem;
+}
+
+
+@media (max-width: 767px) {
+  .logo {
+    & .logo__company-name {
+      font-size: 1rem;
+    }
+
+    & .logo__company-tagline {
+      font-size: .77rem; 
+    }
+  }
+}

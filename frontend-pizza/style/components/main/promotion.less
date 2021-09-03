@@ -1,0 +1,116 @@
+// main: ../../style.less
+
+@import "../vars.less";
+
+.promotion {
+  width: 75%;
+}
+
+.promotion__title {
+  font-size: 180%;
+  font-weight: bold;
+  font-style: italic;
+  color: white;
+}
+
+.promotion-list {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-rows: repeat(3, 10rem);
+
+  & > * {
+    background-color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+  }
+
+  .item1 {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    background-image: url(../img/pizza-7.png);
+    background-size: cover;  
+  }
+  .item2 {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    background-image: url(../img/map.png);
+    background-size: cover;  
+  }
+  .item3 {
+    grid-column: 1;
+    grid-row: 3 / span 1;
+    background-image: url(../img/self-delivery.png);
+    background-size: cover; 
+  }
+
+  .item4 {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+    background-image: url(../img/craft.png);
+    background-size: cover;  
+  }
+
+  & .promotion__shadow {
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+    padding: 1rem;
+    font-size: 1.3rem;
+  }
+
+  & .promotion__shadow-title {
+    border-bottom: 1px solid currentColor;
+  }
+
+  & .promotion__shadow-title:hover {
+    cursor: pointer;
+    color: @primary-text-color;
+  }
+}
+
+@media (max-width: 767px) {
+  .promotion {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .promotion {
+    width: 100%;
+  }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .promotion-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    & .promotion-list-item {
+      margin: .2rem;
+    }
+
+    & .item1 {
+      flex-grow: 2;
+      width: 55%;
+      height: 20rem;
+    }
+
+    & .item2 {
+      flex-grow: 1;
+      width: 35%;
+      height: 20rem;
+    }
+
+    & .item3 {
+      flex-grow: 1;
+      width: 20%;
+      height: 10rem;
+    }
+
+    & .item4 {
+      flex-grow: 2;
+      width: 70%;
+      height: 10rem;
+    }
+  }
+}
